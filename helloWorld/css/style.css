@@ -1,0 +1,219 @@
+*{margin:0;padding:0} 
+
+@font-face {
+    	font-family: JosefinSansRegular;
+    	src: url(../fonts/JosefinSans-Regular.ttf);
+}
+
+@font-face {
+    	font-family: JosefinSansSemibold;
+    	src: url(../fonts/JosefinSans-Semibold.ttf);
+}
+
+@font-face {
+    	font-family: JosefinSlabRegular;
+    	src: url(../fonts/JosefinSlab-Regular.ttf);
+}
+
+@font-face {
+    	font-family: JosefinSlabLightItalic;
+    	src: url(../fonts/JosefinSlab-LightItalic.ttf);
+}
+
+@font-face {
+    	font-family: CabinRegular;
+    	src: url(../fonts/Cabin-Regular.ttf.ttf);
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+    display: block;
+}
+
+body { 
+	font-family:'Cabin-Regular', Helvetica, Arial, sans-serif;
+	font-size:100%;
+	color:#262626;
+ 	line-height:1.125em;
+} 
+
+p {
+	font-size:.9em;
+	line-height:1.5em;
+ 	margin-bottom:1.5em;
+}
+
+h1 {
+	font-family: 	'JosefinSansSemibold';
+	font-size: 2em;
+
+}
+
+#logo {
+	float:left;
+	margin-top:20px;
+	xmargin-bottom:17px;
+	margin-left:2.08333333333%; /* (  20 / 960 ) * 100 */
+	text-transform:	uppercase;
+	display:block;
+	text-align:center;
+	width:20.8333333333%;
+	xoutline: 1px solid red;
+	xbackground:#0f0;
+	xoverflow:hidden;
+	margin-bottom:15px;
+
+}
+
+#wrap{
+	position:fixed;
+	margin:0;
+	top:0;
+	width:100%;
+	overflow:auto;
+}
+
+#nav{
+
+	background:#fff;
+	width:100%;
+	max-width:960px;
+	margin:0 auto;
+	display:block;
+	overflow:auto; /* key for div not collapsing */
+	border-bottom:1px solid #ddd;
+
+}
+
+
+
+#nav ul {
+	xdisplay:block;
+	float:left;
+	width:75%;
+	xoutline: 1px solid red;
+	margin-top:17px;
+	margin-left:2.08333333333%; /* (  20 / 960 ) * 100 */
+	overflow:auto; /* key for div not collapsing */
+}
+
+#nav li {
+
+	font-family: 	'JosefinSansSemibold';
+	font-size: .8em;
+	letter-spacing: .1em;
+	display:inline;
+	text-transform:	uppercase;
+	margin-left:4.08333333333%;
+	xoutline: 1px solid red;
+}
+
+#nav li:first-child {
+	
+}
+
+
+.title{
+	text-align:		center;
+	text-transform:	uppercase;
+ 	line-height:2em;
+ 	letter-spacing:.5em;
+ 	padding-bottom:60px;
+ 	padding-top:80px;
+}
+
+#hero {
+	width:100%;
+	xheight:800px;
+	overflow:hidden;
+	text-align: center;
+	background-color:#000;
+	position:fixed;
+	z-index:-100;
+	top:0;
+}
+
+#hero img {
+	width:100%;
+	max-width:1200px;
+	xmin-width:00px;
+	xmin-height:800px;
+}
+
+#content{
+
+	width:100%;
+   	max-width:960px;
+   	margin: 0px auto;
+	margin-top:680px;
+    background-color:#ffffff;
+    xborder: 1px solid blue;
+
+	overflow:auto; /* key for div not collapsing */
+
+}
+
+
+
+/* COLUMNS ------------------------- */
+
+#left{
+	float:left;
+	xbackground-color:#0f0;
+}
+
+#middle {
+ 	float:left;
+ 	xbackground-color:#f00;
+}
+
+#right{
+	
+	margin-right:2.08333333333%; /* (  20 / 960 ) * 100 */
+	float:left;
+	xbackground-color:#0f0;
+}
+
+/* quarter */
+.quarter {
+	width:22.9166666667%; 		/* ( 220 / 960 ) * 100 */
+	margin-left:2.08333333333%; /* (  20 / 960 ) * 100 */
+}
+
+.half {
+	width: 45.8333333333%;	/* ( 440 / 960 ) * 100 */
+	margin-left:2.08333333333%;
+}
+
+/* TYPOHRAPHY ---------------------- */
+
+#middle p {
+	xpadding-right:9.09090909091%; /* 40 / 440 */
+}
+
+#left p {
+	font:120% 'JosefinSlabLightItalic',serif;
+	line-height:180%;
+	text-align:right;
+	padding-top:15px;
+	border-top: 5px solid;
+}
+
+#right li {
+	font:60% 'JosefinSansSemibold',serif;
+	padding-bottom:10px;
+	line-height:140%;
+	letter-spacing: 1px;
+	margin-bottom:10px;
+	text-transform:uppercase;
+	border-bottom:1px dotted #000;
+}
+
+.test {
+	width:50%;
+	
+	margin-bottom: 0.5em;
+	float:right;
+	margin-left:2.08333333333%;
+	border: 5px solid black;
+}
+

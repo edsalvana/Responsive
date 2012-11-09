@@ -1,0 +1,98 @@
+@media screen and (max-width: 960px) {
+
+	
+}
+
+@media screen and (max-width: 750px) {
+#nav{
+
+	text-align:center;
+	
+}
+
+	#logo {
+		width:95.8333333333%;
+		margin-bottom:10px;
+	}
+
+	#nav ul {
+		clear:left;
+		width:95.8333333333%;
+		margin-right:2.08333333333%; /* (  20 / 960 ) * 100 */
+		margin-bottom:15px;
+	}
+
+	#nav li:first-child {
+		margin-left:0;
+	}
+	
+}
+
+@media screen and (max-width: 580px) {
+	
+
+	#nav{
+
+		text-align:center;
+
+		xheight:200px;
+	}
+
+	#nav ul {
+		width:100%;
+		margin-left:0;
+		margin-right:0;
+		margin-bottom:0px;
+	}
+
+	#nav li {
+		display:block;
+		padding-top:10px;
+		padding-bottom:10px;
+		border-top:1px dotted #000;
+		margin:0;
+	}
+
+	#content{
+		margin-top:0px;
+	}
+
+	#wrap{
+			position:relative;
+	}
+
+	#hero {
+		xheight:400px;
+		position:relative;
+	}
+
+	#left {
+		float:none;
+		display:none;
+	}
+
+	#left p {
+		text-align:left;
+	}
+
+	#middle {
+		float:none;
+	}
+
+	#right {
+		float:none;
+		margin-right:0;
+	}
+
+	.quarter {
+		width: 90.909090909%;		/* ( 400 / 440 ) * 100 */
+		margin-left:4.54545454545%; /* (  20 / 440 ) * 100 */
+		margin-right:4.54545454545%; /* (  20 / 440 ) * 100 */
+	}
+
+	.half {
+		width: 90.909090909%;	/* ( 400 / 440 ) * 100 */
+		margin-left:4.54545454545%; /* (  20 / 440 ) * 100 */
+		margin-right:4.54545454545%; /* (  20 / 440 ) * 100 */
+	}
+}
