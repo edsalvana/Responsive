@@ -1,6 +1,12 @@
 *{margin:0;padding:0} 
 
 @font-face {
+    	font-family: DeliciousRoman;
+    	src: url(../fonts/Delicious-Roman.otf);
+}
+
+
+@font-face {
     	font-family: JosefinSansRegular;
     	src: url(../fonts/JosefinSans-Regular.ttf);
 }
@@ -30,16 +36,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 body { 
-	font-family:'Cabin-Regular', Helvetica, Arial, sans-serif;
+	font-family:'DeliciousRoman', Helvetica, Arial, sans-serif;
 	font-size:100%;
 	color:#262626;
  	line-height:1.125em;
 } 
 
-p {
-	font-size:.9em;
-	line-height:1.5em;
- 	margin-bottom:1.5em;
+p {	
+	color:#4d4d4d;
+	font-size:1em;
+	line-height:1.25em;
+ 	margin-bottom:2.5em;
 }
 
 h1 {
@@ -98,7 +105,7 @@ h1 {
 
 #nav li {
 
-	font-family: 	'JosefinSansSemibold';
+	font-family:'JosefinSansSemibold';
 	font-size: .8em;
 	letter-spacing: .1em;
 	display:inline;
@@ -107,10 +114,13 @@ h1 {
 	xoutline: 1px solid red;
 }
 
-#nav li:first-child {
-	
+#footer {
+	background-color: #fff;
 }
 
+#footer li{
+	display:inline;
+}
 
 .title{
 	text-align:		center;
