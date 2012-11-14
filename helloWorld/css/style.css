@@ -83,7 +83,8 @@ h1 {
 
 	background:#fff;
 	width:100%;
-	max-width:960px;
+	xmax-width:960px;
+	max-width:1200px;
 	margin:0 auto;
 	display:block;
 	overflow:auto; /* key for div not collapsing */
@@ -152,7 +153,8 @@ h1 {
 #content{
 
 	width:100%;
-   	max-width:960px;
+   	xmax-width:960px;
+   	max-width:1200px;
    	margin: 0px auto;
 	margin-top:680px;
     background-color:#ffffff;
