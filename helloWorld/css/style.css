@@ -67,8 +67,6 @@ h1 {
 }
 
 #nav{
-	width:				100%;
-	max-width:			1200px;
 	margin:				0 auto;
 	background:			#fff;
 	overflow:			auto; /* key for div not collapsing */
@@ -147,8 +145,6 @@ h1 {
 /* COLUMNS ------------------------- */
 
 #content{
-	width:				100%;
-   	max-width:			1200px;
    	margin: 			0px auto;
 	margin-top:			680px;
     background-color:	#ffffff;
@@ -158,6 +154,11 @@ h1 {
 /* quarter */
 .column {
 	float:				left;
+}
+
+.full {
+	width:				100%;
+	max-width: 			1200px;
 }
 
 .quarter {
