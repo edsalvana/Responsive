@@ -1,0 +1,39 @@
+//VARIABLES---------------------------------------
+$red:#ff0011;
+$fullWidth:100%;
+
+//MIXINS------------------------------------------
+@mixin rounded($side, $radius: 10px) {
+  	 -moz-border-radius-#{$side}: $radius;
+  -webkit-border-#{$side}-radius: $radius;
+  	   -o-border-#{$side}-radius: $radius;
+   		  border-#{$side}-radius: $radius;
+}
+
+//CSS---------------------------------------------
+.test {
+	
+	width:$fullWidth;
+	overflow:auto;
+	@include rounded(top, 12px); 
+
+	p{ color:$red; }
+
+	ul{
+		padding: 12px;
+		@include rounded(top, 5px); 
+	}
+
+	li{
+		margin-left:1px;  	
+		padding:0;
+		@include rounded( bottom, 5px); 
+	  	a{
+	   		text-decoration:none;
+	   		&:hover, &:focus{
+	   			color:$red;
+	   			background:#ccc;
+	   		}
+	  	}
+	}
+}
