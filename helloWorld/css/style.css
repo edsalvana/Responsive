@@ -31,7 +31,9 @@
 }
 
 /* GENERAL ELEMENTS --------------------------------------------- */
-
+*{
+	outline: 0px solid red;
+}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
     display: block;
 }
@@ -41,6 +43,7 @@ body {
 	font-size:100%;
 	color:#262626;
  	line-height:1.125em;
+ 	background-color:	#000;
 } 
 
 p {	
@@ -117,11 +120,28 @@ h1 {
 }
 
 #footer {
-	background-color: 	#fff;
+	background-color: 	#cccccc;
+	width:100%;
+	margin:0 auto;
+	height:50px;
+	outline: 1px solid blue;
+	
+
+}
+
+#footer ul {
+
+		outline: 1px solid red;
+		overflow:auto;
+
+		xmargin:0 auto;
 }
 
 #footer li{
-	display:			inline;
+	float:left;
+	padding-left:	25px;
+	margin-top:15px;
+
 }
 
 
@@ -171,7 +191,7 @@ h1 {
 	margin-left:		2.08333333333%;
 }
 
-/* TYPOHRAPHY ---------------------- */
+/* TYPOGRAPHY ---------------------- */
 
 
 .pullQuote p{

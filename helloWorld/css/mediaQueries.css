@@ -39,7 +39,6 @@
 	#nav{
 
 		text-align:center;
-
 		xheight:200px;
 	}
 
@@ -82,18 +81,7 @@
 		display:none;
 	}
 
-	#left p {
-		text-align:left;
-	}
-
-	#middle {
-		float:none;
-	}
-
-	#right {
-		float:none;
-		margin-right:0;
-	}
+	
 
 	.quarter {
 		width: 90.909090909%;		/* ( 400 / 440 ) * 100 */
