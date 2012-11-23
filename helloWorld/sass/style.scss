@@ -1,0 +1,271 @@
+$linkColor:blue;
+
+@mixin targetScale( $targetScale ){
+      -ms-transform:          scale($targetScale); // IE 9 */
+      -moz-transform:         scale($targetScale); // Firefox */
+      -webkit-transform:      scale($targetScale); // Safari and Chrome */
+      -o-transform:           scale($targetScale); // Opera */
+      transform:              scale($targetScale);
+}
+
+@mixin transitionTo( $target, $s, $ease ){
+      -moz-transition:        $target $s $ease; // Firefox 4 */
+      -webkit-transition:     $target $s $ease; // Safari and Chrome */
+      -o-transition:          $target $s $ease; // Opera */
+      -webkit-transition:     $target $s $ease;
+}
+
+/* FONTS ------------------------------------------------------- */
+@font-face {
+      font-family: DeliciousRoman;
+      src: url(../fonts/Delicious-Roman.otf);
+}
+
+
+@font-face {
+      font-family: JosefinSansRegular;
+      src: url(../fonts/JosefinSans-Regular.ttf);
+}
+
+@font-face {
+      font-family: JosefinSansSemibold;
+      src: url(../fonts/JosefinSans-Semibold.ttf);
+}
+
+@font-face {
+      font-family: JosefinSlabRegular;
+      src: url(../fonts/JosefinSlab-Regular.ttf);
+}
+
+@font-face {
+      font-family: JosefinSlabLightItalic;
+      src: url(../fonts/JosefinSlab-LightItalic.ttf);
+}
+
+@font-face {
+      font-family: CabinRegular;
+      src: url(../fonts/Cabin-Regular.ttf.ttf);
+}
+
+/* GENERAL ELEMENTS --------------------------------------------- */
+*{
+      outline: 0px solid red;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+    display: block;
+}
+
+a{    text-decoration:none; }
+
+body { 
+      font-family:'DeliciousRoman', Helvetica, Arial, sans-serif;
+      font-size:100%;
+      color:#262626;
+      line-height:1.125em;
+      background-color: #000;
+} 
+
+p {   
+      color:#4d4d4d;
+      font-size:1em;
+      line-height:1.25em;
+      margin-bottom:2.5em;
+}
+
+h1 {
+      font-family:      'JosefinSansSemibold';
+      font-size: 2em;
+}
+
+
+
+/* NAVIGATION & FOOTER ------------------------------------------ */
+
+#navigationWrap{
+      position:               fixed;
+      margin:                 0;
+      top:                    0px;
+      width:                  100%;
+}
+
+#logo {
+      width:                  20.8333333333%;
+      height:                 33px;
+      margin-top:             20px;
+      margin-left:            2.08333333333%; // (  20 / 960 ) * 100 
+      float:                  left;
+      text-transform:         uppercase;
+      text-align:             center;
+}
+
+#nav{
+      margin:                 0 auto;
+      background:             #fff;
+      overflow:               auto; // key for div not collapsing 
+      -moz-box-shadow:        10px 10px 5px #888;
+      -webkit-box-shadow:     10px 10px 5px #888;
+      box-shadow:             0px 1px 3px #888;
+
+      ul {
+            margin-top:       16px;
+            margin-left:      2.08333333333%; // (  20 / 960 ) * 100 
+            float:            left;
+      }
+
+      li {  display:          inline;  
+
+            a {
+                  color:                  $linkColor;
+                  padding:                20px 15px;  
+                  font-family:            'JosefinSansSemibold';
+                  letter-spacing:         .1em;
+                  font-size:              .8em;
+                  margin:                 0;
+                  text-decoration:        none;
+                  text-transform:         uppercase;
+                  @include transitionTo(  all, 0.2s, linear);
+
+                  &:hover, &:focus{
+                        color:            #fff;
+                        background:       rgba(0,0,0,.4);
+                  }
+            }
+      }
+
+}
+
+
+#footer {
+      background-color:       #cccccc;
+      width:                  100%;
+      margin:                 0 auto;
+      height:                 50px;
+      text-align:             center;
+
+      ul {
+            overflow:         auto;
+            display: inline-block;
+      }
+
+      li{
+            float:left;
+            padding-right:    30px;
+            margin-top:       15px;
+      
+            &:last-child{
+                  padding-right:     0;
+            }
+      }
+
+      a{
+            color:            $linkColor;
+            text-decoration:  none;
+      }
+
+}
+
+
+
+
+/* HERO ---------------------------------------------- */
+
+#hero {
+      width:                  100%;
+      top:                    0;
+      overflow:               hidden;
+      text-align:             center;
+      background-color:       #000;
+      position:               fixed;
+      z-index:                -100;
+
+      img {
+            width:            100%;
+            max-width:        1200px;
+      }
+}
+
+
+/* COLUMNS ------------------------- */
+
+#content{
+      margin:                 0px auto;
+      margin-top:             680px;
+      background-color:       #ffffff;
+      overflow:               auto; // key for div not collapsing */
+}
+
+/* quarter */
+.column {
+      float:                  left;
+}
+
+.full {
+      width:                  100%;
+      max-width:              1200px;
+}
+
+.quarter {
+      width:                  22.9166666667%; // ( 220 / 960 ) * 100 */
+      margin-left:            2.08333333333%; // (  20 / 960 ) * 100 */
+}
+
+.half {
+      width:                  45.8333333333%;   // ( 440 / 960 ) * 100 */
+      margin-left:            2.08333333333%;
+}
+
+/* TYPOGRAPHY ---------------------- */
+
+
+.pullQuote p{
+      font:                   120% 'JosefinSlabLightItalic',serif;
+      line-height:            180%;
+      text-align:             right;
+      padding-top:            15px;
+      border-top:             5px solid;
+}
+
+aside li {
+      font:                   60% 'JosefinSansSemibold',serif;
+      padding-bottom:         10px;
+      line-height:            140%;
+      letter-spacing:         1px;
+      margin-bottom:          10px;
+      text-transform:         uppercase;
+      border-bottom:          1px dotted #000;
+      margin-right:           2.08333333333%; 
+
+      a{ color:               $linkColor; }
+}
+
+.flexImage {
+      width:                  100%;
+}
+
+a.imageLink{
+      width:                  50%;
+      float:                  right;
+      margin-left:            2.08333333333%;
+      border:                 5px solid black;
+      display:                block;
+      @include transitionTo(  all, 0.2s, linear);
+
+      &:hover, &:focus {
+            border:                 5px solid red;
+            @include targetScale(1.1);
+      }
+
+}
+
+.title{
+      text-align:             center;
+      text-transform:         uppercase;
+      font-size:5em;
+      line-height:            2em;
+      letter-spacing:         .1em;
+      padding-bottom:         20px;
+      padding-top:            30px;
+}
+
+
+
