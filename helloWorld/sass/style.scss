@@ -1,4 +1,18 @@
-$linkColor:blue;
+// VARS ------------------------------------------------------- */
+
+$linkColor:salmon;
+
+//Grid definition
+$gridList:(one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve);
+$gridWidth:960px;
+$gridMargin:10px;
+$columnWidth:60px;
+$gutterWidth:20px;
+
+// RESET ------------------------------------------------------- */
+@import "compass/reset";
+
+// MIXINS ------------------------------------------------------- */
 
 @mixin targetScale( $targetScale ){
       -ms-transform:          scale($targetScale); // IE 9 */
@@ -20,7 +34,6 @@ $linkColor:blue;
       font-family: DeliciousRoman;
       src: url(../fonts/Delicious-Roman.otf);
 }
-
 
 @font-face {
       font-family: JosefinSansRegular;
@@ -48,27 +61,23 @@ $linkColor:blue;
 }
 
 /* GENERAL ELEMENTS --------------------------------------------- */
-*{
-      outline: 0px solid red;
-}
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
-    display: block;
-}
+//*{ outline:1px solid red}
 
 a{    text-decoration:none; }
 
 body { 
-      font-family:'DeliciousRoman', Helvetica, Arial, sans-serif;
+
       font-size:100%;
       color:#262626;
       line-height:1.125em;
-      background-color: #000;
+      background-color:rgba(0,255,0,.1);
 } 
 
 p {   
+       font-family:Helvetica, Arial, sans-serif;
       color:#4d4d4d;
-      font-size:1em;
-      line-height:1.25em;
+      font-size:.95em;
+      line-height:1.7em;
       margin-bottom:2.5em;
 }
 
@@ -77,8 +86,6 @@ h1 {
       font-size: 2em;
 }
 
-
-
 /* NAVIGATION & FOOTER ------------------------------------------ */
 
 #navigationWrap{
@@ -86,6 +93,12 @@ h1 {
       margin:                 0;
       top:                    0px;
       width:                  100%;
+
+      //-moz-box-shadow:        0px 1px 3px #888;
+      //-webkit-box-shadow:     0px 1px 3px #888;
+      //box-shadow:             0px -2px 8px #888;
+      background-color:       rgba(0,0,0,.9);
+          z-index:1000;
 }
 
 #logo {
@@ -96,16 +109,13 @@ h1 {
       float:                  left;
       text-transform:         uppercase;
       text-align:             center;
+      color:                  white;
 }
 
 #nav{
       margin:                 0 auto;
-      background:             #fff;
       overflow:               auto; // key for div not collapsing 
-      -moz-box-shadow:        10px 10px 5px #888;
-      -webkit-box-shadow:     10px 10px 5px #888;
-      box-shadow:             0px 1px 3px #888;
-
+  
       ul {
             margin-top:       16px;
             margin-left:      2.08333333333%; // (  20 / 960 ) * 100 
@@ -134,9 +144,8 @@ h1 {
 
 }
 
-
 #footer {
-      background-color:       #cccccc;
+      background-color:       rgba(0,0,0,.9);
       width:                  100%;
       margin:                 0 auto;
       height:                 50px;
@@ -160,12 +169,10 @@ h1 {
       a{
             color:            $linkColor;
             text-decoration:  none;
+            font-size:.8em;
       }
 
 }
-
-
-
 
 /* HERO ---------------------------------------------- */
 
@@ -174,13 +181,28 @@ h1 {
       top:                    0;
       overflow:               hidden;
       text-align:             center;
-      background-color:       #000;
-      position:               fixed;
+
+      //position:               fixed;
       z-index:                -100;
+      height:                 600px;
+      //margin:auto;
+
+      background: url(../images/dog.jpg) no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
 
       img {
-            width:            100%;
-            max-width:        1200px;
+            //width:            100%;
+            //max-width:        1400px;
+            //min-width:        500px;
+            //min-height:       600px;
+            //max-width:100%;
+            //margin:auto;
+            //margin-left:-25%;
+            //max-height:100%;
+
       }
 }
 
@@ -188,34 +210,43 @@ h1 {
 /* COLUMNS ------------------------- */
 
 #content{
+      position:relative;
       margin:                 0px auto;
-      margin-top:             680px;
-      background-color:       #ffffff;
+      margin-top:             -60px;
+      background-color:       #fff;
       overflow:               auto; // key for div not collapsing */
+      //-moz-box-shadow:        0px 1px 3px #888;
+      //-webkit-box-shadow:     0px 1px 3px #888;
+      //box-shadow:             0px -2px 8px #888;
+
 }
 
-/* quarter */
 .column {
       float:                  left;
 }
 
 .full {
       width:                  100%;
-      max-width:              1200px;
+      max-width:              1400px;
 }
 
-.quarter {
-      width:                  22.9166666667%; // ( 220 / 960 ) * 100 */
-      margin-left:            2.08333333333%; // (  20 / 960 ) * 100 */
+@for $i from 1 through length($gridList) {
+      .#{ nth( $gridList, $i ) }{
+            width:  (( $i * $columnWidth + ( ($i - 1) * $gutterWidth ) ) / $gridWidth)*100%;
+            margin-left:( $gutterWidth / $gridWidth )*100%;
+      }
 }
 
-.half {
-      width:                  45.8333333333%;   // ( 440 / 960 ) * 100 */
-      margin-left:            2.08333333333%;
+//the definitions of these have to be after the grid system, otherwise they arfe overwritten
+.first{
+      margin-left:( $gridMargin / $gridWidth )*100%;
+}
+
+.last{
+      margin-right:( $gridMargin / $gridWidth )*100%;
 }
 
 /* TYPOGRAPHY ---------------------- */
-
 
 .pullQuote p{
       font:                   120% 'JosefinSlabLightItalic',serif;
@@ -238,9 +269,7 @@ aside li {
       a{ color:               $linkColor; }
 }
 
-.flexImage {
-      width:                  100%;
-}
+.flexImage {      width:      100%; }
 
 a.imageLink{
       width:                  50%;
@@ -260,12 +289,88 @@ a.imageLink{
 .title{
       text-align:             center;
       text-transform:         uppercase;
-      font-size:5em;
-      line-height:            2em;
+      font-size:3em;
+      line-height:            1.5em;
       letter-spacing:         .1em;
       padding-bottom:         20px;
       padding-top:            30px;
 }
 
+/* MEDIA QUERIES ------------------------- */
+
+@media screen and (max-width: 780px) {
+
+      #nav{ 
+            text-align:       center;
+
+            ul {
+                  width:            95.8333333333%;
+                  margin-right:     2.08333333333%; // (  20 / 960 ) * 100 */
+                  margin-bottom:    17px;
+            }
+
+            li:first-child {
+                  margin-left:      0;
+            }
+      }
+      
+      #logo {
+            width:                  100%;
+            margin-left:            0;
+            margin-right:           0;
+            margin-bottom:          0px;
+      }
+
+      #hero {
+            margin-top:105px;
+            height:500px;
+      }
+      
+}
+
+@media screen and (max-width: 650px) {
+      
+      #nav{ 
+            text-align:center; 
+
+            ul {
+                  width:            100%;
+                  margin:           0;
+            }
+
+            li {
+                  display:          block;
+                  padding-top:      10px;
+                  padding-bottom:   10px;
+                  border-top:       1px dotted #000;
+                  margin:           0;
+                  overflow:         hidden;
+            }
+      }
+
+
+      #hero {
+            margin-top:0;
+            height:500px;
+      }
+
+      #navigationWrap{
+            position:relative;
+      }
+
+      .singleColumn {
+            width:90%;
+            margin-left: 5%;
+            margin-right: 5%;
+      }
+
+
+      
+      #quote, #story, #sidebar {
+            @extend .singleColumn;
+      }
+
+      #quote p{ text-align:center; }
+}
 
 

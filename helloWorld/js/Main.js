@@ -6,7 +6,7 @@ $(document).ready(function() {
     //get a reference to the image inside the hero and the height of the hero
     img        = $("#wat");
     heroHeight = parseInt( $("#content").css("margin-top") );
-    $(window).scroll( onScroll );
+    //$(window).scroll( onScroll );
 
 });
 

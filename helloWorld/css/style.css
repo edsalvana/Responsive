@@ -1,3 +1,59 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
 /* FONTS ------------------------------------------------------- */
 @font-face {
   font-family: DeliciousRoman;
@@ -30,30 +86,22 @@
 }
 
 /* GENERAL ELEMENTS --------------------------------------------- */
-* {
-  outline: 0px solid red;
-}
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
 a {
   text-decoration: none;
 }
 
 body {
-  font-family: 'DeliciousRoman', Helvetica, Arial, sans-serif;
   font-size: 100%;
   color: #262626;
   line-height: 1.125em;
-  background-color: #000;
+  background-color: rgba(0, 255, 0, 0.1);
 }
 
 p {
+  font-family: Helvetica, Arial, sans-serif;
   color: #4d4d4d;
-  font-size: 1em;
-  line-height: 1.25em;
+  font-size: .95em;
+  line-height: 1.7em;
   margin-bottom: 2.5em;
 }
 
@@ -68,6 +116,8 @@ h1 {
   margin: 0;
   top: 0px;
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
 }
 
 #logo {
@@ -78,15 +128,12 @@ h1 {
   float: left;
   text-transform: uppercase;
   text-align: center;
+  color: white;
 }
 
 #nav {
   margin: 0 auto;
-  background: #fff;
   overflow: auto;
-  -moz-box-shadow: 10px 10px 5px #888;
-  -webkit-box-shadow: 10px 10px 5px #888;
-  box-shadow: 0px 1px 3px #888;
 }
 #nav ul {
   margin-top: 16px;
@@ -97,7 +144,7 @@ h1 {
   display: inline;
 }
 #nav li a {
-  color: blue;
+  color: salmon;
   padding: 20px 15px;
   font-family: 'JosefinSansSemibold';
   letter-spacing: .1em;
@@ -116,7 +163,7 @@ h1 {
 }
 
 #footer {
-  background-color: #cccccc;
+  background-color: rgba(0, 0, 0, 0.9);
   width: 100%;
   margin: 0 auto;
   height: 50px;
@@ -135,8 +182,9 @@ h1 {
   padding-right: 0;
 }
 #footer a {
-  color: blue;
+  color: salmon;
   text-decoration: none;
+  font-size: .8em;
 }
 
 /* HERO ---------------------------------------------- */
@@ -145,41 +193,99 @@ h1 {
   top: 0;
   overflow: hidden;
   text-align: center;
-  background-color: #000;
-  position: fixed;
   z-index: -100;
-}
-#hero img {
-  width: 100%;
-  max-width: 1200px;
+  height: 600px;
+  background: url(../images/dog.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /* COLUMNS ------------------------- */
 #content {
+  position: relative;
   margin: 0px auto;
-  margin-top: 680px;
-  background-color: #ffffff;
+  margin-top: -60px;
+  background-color: #fff;
   overflow: auto;
 }
 
-/* quarter */
 .column {
   float: left;
 }
 
 .full {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
 }
 
-.quarter {
-  width: 22.9166666667%;
-  margin-left: 2.08333333333%;
+.one {
+  width: 6.25%;
+  margin-left: 2.08333%;
 }
 
-.half {
-  width: 45.8333333333%;
-  margin-left: 2.08333333333%;
+.two {
+  width: 14.58333%;
+  margin-left: 2.08333%;
+}
+
+.three {
+  width: 22.91667%;
+  margin-left: 2.08333%;
+}
+
+.four {
+  width: 31.25%;
+  margin-left: 2.08333%;
+}
+
+.five {
+  width: 39.58333%;
+  margin-left: 2.08333%;
+}
+
+.six {
+  width: 47.91667%;
+  margin-left: 2.08333%;
+}
+
+.seven {
+  width: 56.25%;
+  margin-left: 2.08333%;
+}
+
+.eight {
+  width: 64.58333%;
+  margin-left: 2.08333%;
+}
+
+.nine {
+  width: 72.91667%;
+  margin-left: 2.08333%;
+}
+
+.ten {
+  width: 81.25%;
+  margin-left: 2.08333%;
+}
+
+.eleven {
+  width: 89.58333%;
+  margin-left: 2.08333%;
+}
+
+.twelve {
+  width: 97.91667%;
+  margin-left: 2.08333%;
+}
+
+.first {
+  margin-left: 1.04167%;
+}
+
+.last {
+  margin-right: 1.04167%;
 }
 
 /* TYPOGRAPHY ---------------------- */
@@ -202,7 +308,7 @@ aside li {
   margin-right: 2.08333333333%;
 }
 aside li a {
-  color: blue;
+  color: salmon;
 }
 
 .flexImage {
@@ -232,9 +338,72 @@ a.imageLink:hover, a.imageLink:focus {
 .title {
   text-align: center;
   text-transform: uppercase;
-  font-size: 5em;
-  line-height: 2em;
+  font-size: 3em;
+  line-height: 1.5em;
   letter-spacing: .1em;
   padding-bottom: 20px;
   padding-top: 30px;
+}
+
+/* MEDIA QUERIES ------------------------- */
+@media screen and (max-width: 780px) {
+  #nav {
+    text-align: center;
+  }
+  #nav ul {
+    width: 95.8333333333%;
+    margin-right: 2.08333333333%;
+    margin-bottom: 17px;
+  }
+  #nav li:first-child {
+    margin-left: 0;
+  }
+
+  #logo {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0px;
+  }
+
+  #hero {
+    margin-top: 105px;
+    height: 500px;
+  }
+}
+@media screen and (max-width: 650px) {
+  #nav {
+    text-align: center;
+  }
+  #nav ul {
+    width: 100%;
+    margin: 0;
+  }
+  #nav li {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px dotted #000;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  #hero {
+    margin-top: 0;
+    height: 500px;
+  }
+
+  #navigationWrap {
+    position: relative;
+  }
+
+  .singleColumn, #quote, #story, #sidebar {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  #quote p {
+    text-align: center;
+  }
 }
