@@ -14,6 +14,29 @@ $gutterWidth:20px;
 
 // MIXINS ------------------------------------------------------- */
 
+
+// Creates a grid given the following params
+//
+// $p_gridList:    a list of class names to name the generated columns
+// $p_gridList:    a width of the total grid including the left and right margins
+// $p_columnWidth: width of a column
+// $p_gutterWidth: width of a gutter
+
+@mixin creatGrid($p_gridWidth:960px, $p_columnWidth:60px, $p_gutterWidth:20px, $p_gridList:null ){
+     
+     //if no grid list is supplied, we default to a 12 column grid
+     @if $p_gridList == null { 
+          $p_gridList:(one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve);
+     }
+
+     @for $i from 1 through length($p_gridList) {
+            .#{ nth( $p_gridList, $i ) }{
+                  width:  (( $i * $p_columnWidth + ( ($i - 1) * $p_gutterWidth ) ) / $p_gridWidth)*100%;
+                  margin-left:( $p_gutterWidth / $p_gridWidth )*100%;
+            }
+      } 
+}
+
 @mixin targetScale( $targetScale ){
       -ms-transform:          scale($targetScale); // IE 9 */
       -moz-transform:         scale($targetScale); // Firefox */
@@ -76,9 +99,9 @@ body {
 p {   
        font-family:Helvetica, Arial, sans-serif;
       color:#4d4d4d;
-      font-size:.95em;
-      line-height:1.7em;
-      margin-bottom:2.5em;
+      font-size:1em;
+      line-height:1.6;
+      margin-bottom:1.6em;
 }
 
 h1 {
@@ -115,11 +138,12 @@ h1 {
 #nav{
       margin:                 0 auto;
       overflow:               auto; // key for div not collapsing 
-  
+   
       ul {
             margin-top:       16px;
             margin-left:      2.08333333333%; // (  20 / 960 ) * 100 
             float:            left;
+       
       }
 
       li {  display:          inline;  
@@ -187,7 +211,7 @@ h1 {
       height:                 600px;
       //margin:auto;
 
-      background: url(../images/dog.jpg) no-repeat center center fixed; 
+      background: url(../images/corgi.jpg) no-repeat center center fixed; 
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -223,6 +247,7 @@ h1 {
 
 .column {
       float:                  left;
+      @include transitionTo(  all, .25s, ease);
 }
 
 .full {
@@ -230,12 +255,7 @@ h1 {
       max-width:              1400px;
 }
 
-@for $i from 1 through length($gridList) {
-      .#{ nth( $gridList, $i ) }{
-            width:  (( $i * $columnWidth + ( ($i - 1) * $gutterWidth ) ) / $gridWidth)*100%;
-            margin-left:( $gutterWidth / $gridWidth )*100%;
-      }
-}
+@include creatGrid( $gridWidth, $columnWidth, $gutterWidth, $gridList );
 
 //the definitions of these have to be after the grid system, otherwise they arfe overwritten
 .first{
@@ -256,17 +276,28 @@ h1 {
       border-top:             5px solid;
 }
 
-aside li {
-      font:                   60% 'JosefinSansSemibold',serif;
-      padding-bottom:         10px;
-      line-height:            140%;
-      letter-spacing:         1px;
-      margin-bottom:          10px;
-      text-transform:         uppercase;
-      border-bottom:          1px dotted #000;
-      margin-right:           2.08333333333%; 
+aside {
+      ul{
+  
+            margin-bottom:40px;
+      }
+      li {
+            font:                   60% 'JosefinSansSemibold',serif;
+            padding-bottom:         10px;
+            padding-top:            10px;
+            line-height:            140%;
+            letter-spacing:         1px;
+            //margin-bottom:          10px;
+            text-transform:         uppercase;
+            border-bottom:          1px dotted #000;
+            margin-right:           2.08333333333%; 
+
+            &:first-child{          border-top: 1px dotted #000; }
+      }
 
       a{ color:               $linkColor; }
+
+
 }
 
 .flexImage {      width:      100%; }
@@ -326,6 +357,24 @@ a.imageLink{
             height:500px;
       }
       
+      .singleColumn {
+            width:90%;
+            margin-left: 5%;
+            margin-right: 5%;
+      }
+
+      #quote, #story, #sidebar {
+            @extend .singleColumn;
+      }
+
+      #quote {
+            width:90%;
+            margin-left: 5%;
+            margin-right: 5%;
+      }
+
+      #quote p, #sidebar ul { text-align:center; }
+
 }
 
 @media screen and (max-width: 650px) {
@@ -364,13 +413,15 @@ a.imageLink{
             margin-right: 5%;
       }
 
-
+      #story > p {
+            font-size:1.1em;
+      }
       
       #quote, #story, #sidebar {
             @extend .singleColumn;
       }
 
-      #quote p{ text-align:center; }
+  
 }
 
 
